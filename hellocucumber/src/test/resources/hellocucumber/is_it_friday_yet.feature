@@ -1,23 +1,18 @@
-功能: Is it Friday yet?
-  Everybody wants to know when it's Friday
+#language: zh-CN
+功能: 今天是星期五吗（用变量）?
+  如果今天是星期五，下班后就可以开派对了；所以大家都都想知道今天是不是星期五。
+场景大纲: 今日是不是星期五
+  假如 今天是<日期>
+  当 我问今天是不是星期五
+  那么 我应该被告知：<回答>
 
-  #Scenario: Sunday isn't Friday
-  #  Given today is Sunday
-  #  When I ask whether it's Friday yet
-  #  Then I should be told "Nope"
-
-  #Scenario: Friday is Friday
-  #  Given today is Friday
-  #  When I ask whether it's Friday yet
-  #  Then I should be told "TGIF"
-
-  场景大纲: Today is or not Friday
-    Given today is <day>
-    When I ask whether it's Friday yet
-    Then  I should be told <answer>
-
-    Examples:
-      | day | answer |
-      | "Friday" | "TGIF" |
-      | "Sunday" | "Nope" |
-      | "anything else!" | "Nope" |
+  例子:
+    | 日期 | 回答 |
+    | "星期一" | "今天不是星期五"|
+    | "星期二" | "今天不是星期五"|
+    | "星期三" | "今天不是星期五"|
+    | "星期四" | "今天不是星期五"|
+    | "星期五" | "今天是星期五"|
+    | "星期六" | "今天不是星期五"|
+    | "星期日" | "今天不是星期五"|
+    | "其他" | "日期非法" |
